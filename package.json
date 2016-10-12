@@ -1,7 +1,6 @@
 {
   "name": "captcha_app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +9,17 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^2.5.2"
-  }
+  },
+  "dependencies": {
+    "jasmine": "^2.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setchomaru/CAPTCHA_APP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/setchomaru/CAPTCHA_APP/issues"
+  },
+  "homepage": "https://github.com/setchomaru/CAPTCHA_APP#readme",
+  "description": ""
 }
