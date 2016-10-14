@@ -139,5 +139,9 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,1,3,7)
        expect(app.generate()).toEqual('THREE + 7')
      })
+     it('should return "ONE + 8" when in input is 2,1,1,8',  () => {
+       var app = new captchaapp(pattern,1,1,8)
+       expect(app.generate()).toEqual('ONE + 8')
+     })
    })
 })
