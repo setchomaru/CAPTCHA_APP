@@ -62,4 +62,18 @@ describe('Captcha App', () =>{
 
 
   })
+
+
+
+
+
+  describe('Pattern 2', () =>{
+     let pattern = 2
+     it('should return "SIX + 0" when in input is 2, 1, 6, 0',  () => {
+ 			var app = new captchaapp(pattern,1,6,0)
+       expect(app.generate()).toEqual('SIX + 0')
+     })
+
+
+   })
 })
