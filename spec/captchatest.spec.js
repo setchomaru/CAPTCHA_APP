@@ -79,6 +79,8 @@ describe('Captcha App', () =>{
           var app = new captchaapp(pattern,1,9,0)
           expect(app.generate()).toEqual('9 + ZERO')
         })
+
+
   })
 
 
