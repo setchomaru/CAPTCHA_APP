@@ -95,6 +95,10 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,1,5,3)
        expect(app.generate()).toEqual('FIVE + 3')
      })
+     it('should return "FOUR - 3" when in input is 2, 2, 4, 3',  () => {
+       var app = new captchaapp(pattern,2,4,3)
+       expect(app.generate()).toEqual('FOUR - 3')
+     })
 
 
 
