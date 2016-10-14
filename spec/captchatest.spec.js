@@ -55,3 +55,19 @@ describe('Captcha App', () =>{
     })
   })
 })
+
+//pattern2
+
+describe('Captcha App', () =>{
+ describe('Pattern 2', () =>{
+    let pattern = 2
+    it('should return "ONE + 1" when in input is 1, 1, 1, 1',  () => {
+			var app = new captchaapp(pattern,1,1,1)
+      expect(app.generate()).toEqual('ONE + 1')
+    })
+    it('should return "FIVE + 2" when in input is 1, 1, 5, 2',  () => {
+			var app = new captchaapp(pattern,1,5,2)
+      expect(app.generate()).toEqual('FIVE + 2')
+    })
+  })
+})
