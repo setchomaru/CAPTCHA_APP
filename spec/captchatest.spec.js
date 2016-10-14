@@ -143,5 +143,9 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,1,1,8)
        expect(app.generate()).toEqual('ONE + 8')
      })
+     it('should return "SIX + 0" when in input is 2,1,6,0',  () => {
+       var app = new captchaapp(pattern,1,6,0)
+       expect(app.generate()).toEqual('SIX + 0')
+     })
    })
 })
