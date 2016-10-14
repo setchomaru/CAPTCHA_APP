@@ -119,7 +119,10 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,2,1,4)
        expect(app.generate()).toEqual('ONE - 4')
      })
-
+     it('should return "SEVEN - 1" when in input is 2, 2, 7, 1',  () => {
+       var app = new captchaapp(pattern,2,7,1)
+       expect(app.generate()).toEqual('SEVEN - 1')
+     })
 
    })
 })
