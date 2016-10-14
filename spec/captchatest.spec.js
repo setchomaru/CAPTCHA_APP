@@ -3,7 +3,7 @@ function captchaapp(p, o, l, r){
 			return new LOperator(p,l)+ ' '+ new Operator(o) + ' ' + new ROperator(p,r);
     }
   }
-var op = ['+', '-','*','/'];
+var op = ['+', '-'];
 function Operator(o){
   this.toString = function(){
     return op[o-1];
@@ -78,11 +78,6 @@ describe('Captcha App', () =>{
         it('should return "9 + ZERO" when in input is 1, 1, 9, 0',  () => {
           var app = new captchaapp(pattern,1,9,0)
           expect(app.generate()).toEqual('9 + ZERO')
-        })
-
-        it('should return "3 - ZERO" when in input is 1, 2, 3, 0',  () => {
-          var app = new captchaapp(pattern,2,3,0)
-          expect(app.generate()).toEqual('3 - ZERO')
         })
   })
 
