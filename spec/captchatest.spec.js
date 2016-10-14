@@ -79,6 +79,18 @@ describe('Captcha App', () =>{
           var app = new captchaapp(pattern,1,9,0)
           expect(app.generate()).toEqual('9 + ZERO')
         })
+
+
+        it('should return "3 - ZERO" when in input is 1, 2, 3, 0',  () => {
+          var app = new captchaapp(pattern,2,3,0)
+          expect(app.generate()).toEqual('3 - ZERO')
+        })
+        it('should return "4 - ZERO" when in input is 1, 2, 4, 0',  () => {
+          var app = new captchaapp(pattern,2,4,0)
+          expect(app.generate()).toEqual('4 - ZERO')
+        })
+
+
   })
 
 
@@ -103,9 +115,11 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,2,0,2)
        expect(app.generate()).toEqual('ZERO - 2')
      })
+     it('should return "ONE - 4" when in input is 2, 2, 1, 4',  () => {
+       var app = new captchaapp(pattern,2,1,4)
+       expect(app.generate()).toEqual('ONE - 4')
+     })
 
 
    })
 })
-
-//pattern2
