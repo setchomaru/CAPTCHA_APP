@@ -96,8 +96,21 @@ describe('Captcha App', () =>{
  			var app = new captchaapp(pattern,1,6,0)
        expect(app.generate()).toEqual('SIX + 0')
      })
-
+     it('should return "FIVE + 3" when in input is 2, 1, 5, 3',  () => {
+       var app = new captchaapp(pattern,1,5,3)
+       expect(app.generate()).toEqual('FIVE + 3')
+     })
+     it('should return "FOUR - 3" when in input is 2, 2, 4, 3',  () => {
+       var app = new captchaapp(pattern,2,4,3)
+       expect(app.generate()).toEqual('FOUR - 3')
+     })
+     it('should return "ZERO - 2" when in input is 2, 2, 0, 2',  () => {
+       var app = new captchaapp(pattern,2,0,2)
+       expect(app.generate()).toEqual('ZERO - 2')
+     })
 
 
    })
 })
+
+//pattern2
