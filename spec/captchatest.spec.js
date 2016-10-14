@@ -49,5 +49,9 @@ describe('Captcha App', () =>{
 			var app = new captchaapp(pattern,1,1,1)
       expect(app.generate()).toEqual('1 + ONE')
     })
+    it('should return "2 + FIVE" when in input is 1, 1, 2, 5',  () => {
+			var app = new captchaapp(pattern,1,2,5)
+      expect(app.generate()).toEqual('2 + FIVE')
+    })
   })
 })
