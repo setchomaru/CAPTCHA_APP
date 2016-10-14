@@ -3,7 +3,7 @@ function captchaapp(p, o, l, r){
 			return new LOperator(p,l)+ ' '+ new Operator(o) + ' ' + new ROperator(p,r);
     }
   }
-var op = ['+', '-','*','/'];
+var op = ['+', '-'];
 function Operator(o){
   this.toString = function(){
     return op[o-1];
@@ -80,6 +80,7 @@ describe('Captcha App', () =>{
           expect(app.generate()).toEqual('9 + ZERO')
         })
 
+
         it('should return "3 - ZERO" when in input is 1, 2, 3, 0',  () => {
           var app = new captchaapp(pattern,2,3,0)
           expect(app.generate()).toEqual('3 - ZERO')
@@ -89,10 +90,12 @@ describe('Captcha App', () =>{
           expect(app.generate()).toEqual('4 - ZERO')
         })
 
+
         it('should return "9 - ZERO" when in input is 1, 2, 9, 0',  () => {
           var app = new captchaapp(pattern,2,9,0)
           expect(app.generate()).toEqual('9 - ZERO')
         })
+
 
   })
 
@@ -118,9 +121,41 @@ describe('Captcha App', () =>{
        var app = new captchaapp(pattern,2,0,2)
        expect(app.generate()).toEqual('ZERO - 2')
      })
-
-
+     it('should return "ONE - 4" when in input is 2, 2, 1, 4',  () => {
+       var app = new captchaapp(pattern,2,1,4)
+       expect(app.generate()).toEqual('ONE - 4')
+     })
+     it('should return "SEVEN - 1" when in input is 2, 2, 7, 1',  () => {
+       var app = new captchaapp(pattern,2,7,1)
+       expect(app.generate()).toEqual('SEVEN - 1')
+     })
+     it('should return "NINE - 5" when in input is 2, 2, 9, 5',  () => {
+       var app = new captchaapp(pattern,2,9,5)
+       expect(app.generate()).toEqual('NINE - 5')
+     })
+     it('should return "EIGHT - 6" when in input is 2, 2, 8, 6',  () => {
+       var app = new captchaapp(pattern,2,8,6)
+       expect(app.generate()).toEqual('EIGHT - 6')
+     })
+     it('should return "TWO - 0" when in input is 2, 2, 2, 0',  () => {
+       var app = new captchaapp(pattern,2,2,0)
+       expect(app.generate()).toEqual('TWO - 0')
+     })
+     it('should return "THREE + 7" when in input is 2, 1,3, 7',  () => {
+       var app = new captchaapp(pattern,1,3,7)
+       expect(app.generate()).toEqual('THREE + 7')
+     })
+     it('should return "ONE + 8" when in input is 2,1,1,8',  () => {
+       var app = new captchaapp(pattern,1,1,8)
+       expect(app.generate()).toEqual('ONE + 8')
+     })
+     it('should return "SIX + 0" when in input is 2,1,6,0',  () => {
+       var app = new captchaapp(pattern,1,6,0)
+       expect(app.generate()).toEqual('SIX + 0')
+     })
+     it('should return "ZERO + 0" when in input is 2,1,0,0',  () => {
+       var app = new captchaapp(pattern,1,0,0)
+       expect(app.generate()).toEqual('ZERO + 0')
+     })
    })
 })
-
-//pattern2
