@@ -64,6 +64,12 @@ describe('Captcha App', () =>{
       expect(app.generate()).toEqual('2 - ZERO')
     })
 
+
+        it('should return "6 + ZERO" when in input is 1, 1, 6, 0',  () => {
+          var app = new captchaapp(pattern,1,6,0)
+          expect(app.generate()).toEqual('6 + ZERO')
+        })
+
   })
 
 
